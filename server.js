@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 const { capitalizeWord } = require("./helpers");
-const cors = require("cors");
-const { books } = require("data.js");
+const cors = require('cors');
+let { books } = require('./data.js')
 
 app.use(cors());
 app.use(express.json());
@@ -42,16 +42,9 @@ app.get("/cats/:name", (req, res) => {
     let returnBook = books[bookReq];
     if (!returnBook) {
       throw new Error(`Sorry, we don't have information about ${bookReq}.`);
+    }catch{
+      
     }
-    res.json(returnBook);
-    // let requestedCatName = req.params.name;
-    // let matchingCat = cats.find((cat) => cat.name.toLowerCase() === requestedCatName.toLowerCase());
-    // if(!matchingCat) { throw new Error(`We don't have a cat called ${requestedCatName}!`)}
-    // res.json(matchingCat)
-  } catch (err) {
-    res.status(404).json({ message: err.message });
-  }
-  res.json(matchingCat);
 });
 
 // U
