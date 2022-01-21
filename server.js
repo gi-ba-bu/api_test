@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 const { capitalizeWord } = require("./helpers");
-const cors = require('cors');
-const { books } = require('data.js')
+const cors = require("cors");
+const { books } = require("data.js");
 
 app.use(cors());
 app.use(express.json());
@@ -13,14 +13,21 @@ app.get("/", (req, res) => {
 
 // C
 app.post("/books", (req, res) => {
+  // Get details
   const titleVal = req.body.title;
   const authorVal = req.body.author;
   const pagesVal = req.body.pages;
+  // Create book object
   const newBook = { title: titleVal, author: authorVal, pages: pagesVal };
+  // Make camel case
   const bookKeyArr = titleVal.split(" ");
-  const capitalKeyArr = bookKeyArr.map(capitalizeWord);
-  const bookKey = capitalKeyArr.join("");
+  let bookKey = bookKeyArr[0];
+  for (let i = 1; i < bookKeyArr.length; i++) {
+    bookKey += capitalizeWord(bookKeyArr[i]);
+  }
+  // Add new book to books Obj
   books[bookKey] = newBook;
+  // return status and book
   res.status(201).json(newBook);
 });
 
@@ -30,22 +37,21 @@ app.get("/cats", (req, res) => {
 });
 
 app.get("/cats/:name", (req, res) => {
-    try {
-        let bookReq = req.params.name;
-        let returnBook = books[bookReq]
-        if (!returnBook) {throw new Error(`Sorry, we don't have information about ${bookReq}.`)}
-        res.json(returnBook)
-        // let requestedCatName = req.params.name;
-        // let matchingCat = cats.find((cat) => cat.name.toLowerCase() === requestedCatName.toLowerCase());
-        // if(!matchingCat) { throw new Error(`We don't have a cat called ${requestedCatName}!`)}
-        // res.json(matchingCat)
-    } catch (err) {
-        res.status(404).json({ message: err.message })
+  try {
+    let bookReq = req.params.name;
+    let returnBook = books[bookReq];
+    if (!returnBook) {
+      throw new Error(`Sorry, we don't have information about ${bookReq}.`);
     }
-    res.json(matchingCat);
+    res.json(returnBook);
+    // let requestedCatName = req.params.name;
+    // let matchingCat = cats.find((cat) => cat.name.toLowerCase() === requestedCatName.toLowerCase());
+    // if(!matchingCat) { throw new Error(`We don't have a cat called ${requestedCatName}!`)}
+    // res.json(matchingCat)
   } catch (err) {
     res.status(404).json({ message: err.message });
   }
+  res.json(matchingCat);
 });
 
 // U
