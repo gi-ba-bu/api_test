@@ -25,11 +25,6 @@
 2. Create ```server.js``` to store the server functions
 3. Create ```data.js``` to store the data that clients can interact with
 
+**Testing the API manually**
 
-
-
-
-
-
-
-
+1. Can be done on this website: https://hoppscotch.io/
