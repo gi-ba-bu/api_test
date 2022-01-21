@@ -30,8 +30,8 @@ app.post("/books", (req, res) => {
 });
 
 // R
-app.get("/cats", (req, res) => {
-  res.json(cats);
+app.get("/books", (req, res) => {
+  res.json(books);
 });
 
 app.get("/books/:name", (req, res) => {
