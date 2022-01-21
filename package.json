@@ -1,0 +1,27 @@
+{
+  "name": "api_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+    "start": "node server.js"
+    "dev": 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rwclutterbuck/api_test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rwclutterbuck/api_test/issues"
+  },
+  "homepage": "https://github.com/rwclutterbuck/api_test#readme",
+  "devDependencies": {
+    "express": "^4.17.2",
+    "jest": "^27.4.7",
+    "supertest": "^6.2.2"
+  }
+}
