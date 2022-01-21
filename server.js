@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 const { capitalizeWord } = require("./helpers");
-const cors = require('cors');
-let { books } = require('./data.js')
+const cors = require("cors");
+let { books } = require("./data.js");
 
 app.use(cors());
 app.use(express.json());
