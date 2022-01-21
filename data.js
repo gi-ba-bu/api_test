@@ -1,4 +1,4 @@
-let bookLib = {
+let books = {
   gameOfThrones: {
     title: "Game of Thrones",
     author: "George R.R. Martin",
@@ -11,4 +11,4 @@ let bookLib = {
   },
 };
 
-module.exports(bookLib);
+module.exports = { books };
