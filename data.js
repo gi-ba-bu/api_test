@@ -1,13 +1,13 @@
 let books = {
-  gameOfThrones: {
-    title: "Game of Thrones",
+  "game-of-thrones": {
+    title: "Game of thrones",
     author: "George R.R. Martin",
     pages: 780,
     edition: "4th",
     price: "£15.50", 
   },
-  aClashOfKings: {
-    title: "A Clash of Kings",
+  "a-clash-of-kings": {
+    title: "A clash of kings",
     author: "George R.R. Martin",
     pages: 873,
     edition: "5th",

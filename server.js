@@ -1,32 +1,33 @@
-const express = require("express");
+const express = require("express"); /*import express to set up server*/
 const app = express();
-const { capitalizeWord } = require("./helpers");
-const cors = require("cors");
-let { books } = require("./data.js");
+const cors = require("cors"); /*import cors to run server with a middleman*/
 
-app.use(cors());
+
+const { capitalizeWord, capitalizeFirstLetter } = require("./helpers"); /*import helpers*/
+let { books } = require("./data.js"); /*import data*/
+
+app.use(cors()); 
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Hello World");
+  res.send("Welcome at Node Boooks Admin");
 });
 
 // C
 app.post("/books", (req, res) => {
-  // Get details
-  const titleVal = req.body.title;
-  // Create book object
-  const newBook = req.body;
+  // Get title
+  //const titleVal = req.body.title;
+  //console.log(titleVal);
+  // Provide book object
+  //const newBook = req.body;
+  //console.log(newBook);
   // Make camel case
-  const bookKeyArr = titleVal.split(" ");
-  let bookKey = bookKeyArr[0];
-  for (let i = 1; i < bookKeyArr.length; i++) {
-    bookKey += capitalizeWord(bookKeyArr[i]);
-  }
-  // Add new book to books Obj
-  books[bookKey] = newBook;
+  //const bookKey = capitalizeFirstLetter(titleVal).replace(" ","-");
+  //console.log(bookKey);
+    // Add new book to books Obj
+  //books[bookKey] = newBook;
   // return status and book
-  res.status(201).json(newBook);
+  //res.status(201).json(newBook);
 });
 
 // R
