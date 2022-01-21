@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --watchAll",
     "start": "node server.js"
-  },
+   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rwclutterbuck/api_test.git"
