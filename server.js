@@ -42,8 +42,9 @@ app.get("/cats/:name", (req, res) => {
     let returnBook = books[bookReq];
     if (!returnBook) {
       throw new Error(`Sorry, we don't have information about ${bookReq}.`);
-    }catch{
-      
+    }
+    } catch(err) {
+        res.status(404).json({ message: err.message })
     }
 });
 
