@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const { capitalizeWord } = require("./helpers");
 const cors = require('cors');
-const { books } = require('data.js')
+let { books } = require('./data.js')
 
 app.use(cors());
 app.use(express.json());
@@ -42,10 +42,6 @@ app.get("/cats/:name", (req, res) => {
     } catch (err) {
         res.status(404).json({ message: err.message })
     }
-    res.json(matchingCat);
-  } catch (err) {
-    res.status(404).json({ message: err.message });
-  }
 });
 
 // U
