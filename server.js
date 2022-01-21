@@ -15,10 +15,8 @@ app.get("/", (req, res) => {
 app.post("/books", (req, res) => {
   // Get details
   const titleVal = req.body.title;
-  const authorVal = req.body.author;
-  const pagesVal = req.body.pages;
   // Create book object
-  const newBook = { title: titleVal, author: authorVal, pages: pagesVal };
+  const newBook = req.body;
   // Make camel case
   const bookKeyArr = titleVal.split(" ");
   let bookKey = bookKeyArr[0];
