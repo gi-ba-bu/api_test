@@ -21,9 +21,9 @@
 
 **Organizing the content**
 
-1. Create index.js
-2. Create server.js
-3. Create data.js
+1. Create ```index.js```, the "main" file, used to launch the server 
+2. Create ```server.js``` to store the server functions
+3. Create ```data.js``` to store the data that clients can interact with
 
 
 
