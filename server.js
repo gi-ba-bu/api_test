@@ -50,22 +50,20 @@ app.get("/books/:name", (req, res) => {
 });
 
 // U
-app.patch("/cats/:name", (req, res) => {
-  // read new data from body
-  let newData = req.body;
-  // find the data to update - go through the list and match name value to value of dynamic route param of :name
-  let requestedCatName = req.params.name;
-  let matchingCat = cats.find(
-    (cat) => cat.name.toLowerCase() === requestedCatName.toLowerCase()
-  );
-
-  // actually update the stored cats data
-  let updatedCat = { ...matchingCat, ...newData };
-  let catIdx = cats.indexOf(matchingCat);
-  cats = [...cats.slice(0, catIdx), updatedCat, ...cats.slice(catIdx + 1)];
-
-  res.json(updatedCat);
-});
+app.patch('/books/:title', (req, res) => {
+    // read new data from body
+    let newData = req.params.title;
+    // find the data to update - go through the list and match name value to value of dynamic route param of :name
+    let requestedBook = req.params.title;
+    let matchingBook = books.find((book) => book.title.toLowerCase() === requestedBook.toLowerCase());
+    
+    // actually update the stored books data
+    let updatedBook = { ...matchingBook, ...newBook }
+    let bookIdx = books.indexOf(matchingBook)
+    books = [ ...books.slice(0, bookIdx), updatedBook, ...books.slice(bookIdx + 1)]
+    
+    res.json(updatedBooks)
+})
 
 // D
 app.delete("/cats", (req, res) => {
