@@ -36,13 +36,14 @@ app.get("/cats", (req, res) => {
   res.json(cats);
 });
 
-app.get("/cats/:name", (req, res) => {
+app.get("/books/:name", (req, res) => {
   try {
     let bookReq = req.params.name;
     let returnBook = books[bookReq];
     if (!returnBook) {
       throw new Error(`Sorry, we don't have information about ${bookReq}.`);
     }
+    res.json(returnBook)
     } catch(err) {
         res.status(404).json({ message: err.message })
     }
