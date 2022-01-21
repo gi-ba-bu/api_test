@@ -35,19 +35,19 @@ app.get("/cats/:name", (req, res) => {
 })
 
 // U
-app.patch('/cats/:name', (req, res) => {
+app.patch('/books/:title', (req, res) => {
     // read new data from body
-    let newData = req.body
+    let newData = req.params.name;
     // find the data to update - go through the list and match name value to value of dynamic route param of :name
-    let requestedCatName = req.params.name;
-    let matchingCat = cats.find((cat) => cat.name.toLowerCase() === requestedCatName.toLowerCase());
+    let requestedBook = req.params.title;
+    let matchingBook = books.find((book) => book.name.toLowerCase() === requestedBook.toLowerCase());
     
-    // actually update the stored cats data
-    let updatedCat = { ...matchingCat, ...newData }
-    let catIdx = cats.indexOf(matchingCat)
-    cats = [ ...cats.slice(0, catIdx), updatedCat, ...cats.slice(catIdx + 1)]
+    // actually update the stored books data
+    let updatedBook = { ...matchingBook, ...newBook }
+    let bookIdx = cats.indexOf(matchingCat)
+    books = [ ...books.slice(0, bookIdx), updatedBook, ...books.slice(catIdx + 1)]
     
-    res.json(updatedCat)
+    res.json(updatedBooks)
 })
 
 // D
