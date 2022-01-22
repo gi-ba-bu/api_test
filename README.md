@@ -25,7 +25,7 @@ app.get("/books", (req, res) => {
  ```
 
 ---
-**Setting up a collaborative dev environment**
+**Notes on setting up a collaborative dev environment**
 
 1. Create a folder and ```$ git init``` 
 2. ```$ touch .gitignore``` and edit to ignore "node_modules" and "package-lock.json"
@@ -49,4 +49,4 @@ app.get("/books", (req, res) => {
 
 **Testing the API manually**
 
-1. Can be done on this website: https://hoppscotch.io/
+1. Testing can be done on this website: https://hoppscotch.io/
