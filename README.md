@@ -1,6 +1,31 @@
 # NODE BOOKS ADMIN
 
-## CREATING AND TESTING AN API SERVER
+This is an exercise on setting up basic routing using **express** in a node runtime environment. 
+
+Routing determines how an application responds to a client request. The response depends on the **path**, **request** and **method** (of answering the request) used as follows:
+
+``` app.method(path, handler) ```
+
+Where:
+
++ app is an instance of express
++ method is an http request method (such as get, send, post and delete)
++ path is a path on the server (such as "/", "/books", "/books/the-lord-of-the-rings")
++ handler is the function executed when the route (path + method) is matched
+
+Example of defining a route for the client to read the data.
+
+```
+app.get("/books", (req, res) => {
+  res.json(books);
+});
+ ```
+
+
+
+
+
+### CREATING AN API SERVER
 
 **Setting up a collaborative dev environment**
 
