@@ -1,6 +1,9 @@
 # NODE BOOKS ADMIN
+---
 
-This is an exercise on setting up basic routing using **express** in a node runtime environment. 
+## ON ROUTING AND API SERVERS
+
+This repo contains an example of setting up basic routing using **express** in a node runtime environment. 
 
 Routing determines how an application responds to a client request. The response depends on the **path**, **request** and **method** (of answering the request) used as follows:
 
@@ -8,25 +11,20 @@ Routing determines how an application responds to a client request. The response
 
 Where:
 
-+ app is an instance of express
-+ method is an http request method (such as get, send, post and delete)
-+ path is a path on the server (such as "/", "/books", "/books/the-lord-of-the-rings")
++ app is an instance of express (such as ``` const app = express(); ```)
++ method is an http request method (such as ```get```, ```send```, ```post``` and ```delete```)
++ path is a path on the server (such as ```"/"```, ```"/books"```, ```"/books/the-lord-of-the-rings"```)
 + handler is the function executed when the route (path + method) is matched
 
 Example of defining a route for the client to read the data.
 
 ```
 app.get("/books", (req, res) => {
-  res.json(books);
+  res.json(books); 
 });
  ```
 
-
-
-
-
-### CREATING AN API SERVER
-
+---
 **Setting up a collaborative dev environment**
 
 1. Create a folder and ```$ git init``` 
@@ -42,7 +40,6 @@ app.get("/books", (req, res) => {
     "dev": "nodemon index.js"
    },
 ```
-
 
 **Organizing the content**
 
