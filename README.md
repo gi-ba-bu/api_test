@@ -43,9 +43,10 @@ app.get("/books", (req, res) => {
 
 **Organizing the content**
 
-1. Create ```index.js```, the "main" file, used to launch the server 
-2. Create ```server.js``` to store the server functions
-3. Create ```data.js``` to store the data that clients can interact with
+1. ```index.js```, the "main" file, used to launch the server 
+2. ```server.js``` to store the server functions
+3. ```data.js``` to store the data that clients can interact with
+4. ```helper.js``` to store helper functions
 
 **Testing the API manually**
 
