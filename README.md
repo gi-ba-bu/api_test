@@ -16,7 +16,7 @@ Where:
 + path is a path on the server (such as ```"/"```, ```"/books"```, ```"/books/the-lord-of-the-rings"```)
 + handler is the function executed when the route (path + method) is matched
 
-Example of defining a route for the client to read the data.
+Example of defining a route for that the client can use to read the data.
 
 ```
 app.get("/books", (req, res) => {
