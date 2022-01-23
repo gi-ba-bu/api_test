@@ -1,5 +1,5 @@
 const express = require("express"); /*import express to set up the server*/
-const app = express();
+const app = express(); // we assigne our server to the variable `app` in this setup
 const cors = require("cors"); /*import cors to run server with a middleman*/
 
 
