@@ -1,7 +1,7 @@
 # NODE BOOKS ADMIN
 ---
 
-## ON ROUTING AND API SERVERS
+## API SERVERS AND ROUTING
 
 This repo contains an example of setting up basic routing using **express** in a node runtime environment. 
 
